@@ -42,9 +42,9 @@ for (var i = 0; i < torrentTrElements.length; i++) {
         var size = Number(sizeRaw.substring(0, sizeRaw.length - 4)) / 1000
     }
 
-    var seederCount = Number(childInfo[5].innerText)
+    var seederCount = Number(childInfo[5].innerText.replace(",",""))  // 去掉逗号分隔符
 
-    A = calculateValueA(uploadedWeeks,size,seederCount)
+    A = calculateValueA(uploadedWeeks,size,seederCount).toFixed(4) // 保留四位小数
 
-    console.log(i, A)
+    console.log(i, A, uploadedWeeks, size, seederCount)
 }
