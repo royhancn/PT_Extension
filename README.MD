@@ -1,0 +1,1 @@
+This is a study project for making some Chrome extensions
